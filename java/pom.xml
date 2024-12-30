@@ -39,6 +39,11 @@
 
 	<build>
 		<plugins>
+      		<plugin>
+        		<artifactId>maven-compiler-plugin</artifactId>
+        		<version>3.13.0</version>
+			</plugin>
+
 			<plugin>
 				<groupId>io.github.terminological</groupId>
 				<artifactId>r6-generator-maven-plugin</artifactId>
