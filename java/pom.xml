@@ -71,6 +71,8 @@
 						<description>${project.description}</description>
 						<maintainerName>John</maintainerName>
 						<maintainerFamilyName>Dimeo</maintainerFamilyName>
+						<maintainerEmail>dimeo@elderresearch.com</maintainerEmail>
+						<maintainerOrganisation>Personal</maintainerOrganisation>
 					</packageData>
 					<outputDirectory>${project.basedir}/..</outputDirectory>
 				</configuration>
