@@ -1,0 +1,89 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>io.github.jdimeo</groupId>
+	<artifactId>r6-generator-test</artifactId>
+	<version>0.0.1</version>
+	<name>R6 Generator Test</name>
+	<description>Simple test for CI/CD of using terminological/r6-generator</description>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<!-- Must be Java 8 for standard rJava implementation -->
+		<maven.compiler.release>8</maven.compiler.release>
+		<r6.version>1.1.0</r6.version>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>io.github.terminological</groupId>
+			<artifactId>r6-generator-runtime</artifactId>
+			<version>${r6.version}</version>
+		</dependency>
+
+		<!-- tests -->
+		<dependency>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter-api</artifactId>
+			<version>5.4.0</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter-engine</artifactId>
+			<version>5.4.0</version>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>io.github.terminological</groupId>
+				<artifactId>r6-generator-maven-plugin</artifactId>
+				<version>${r6.version}</version>
+				<configuration>
+					<packageData>
+						<title>R Generator Test</title>
+						<version>${project.version}</version>
+						<debug>false</debug>
+						<githubOrganisation>jdimeo</githubOrganisation>
+						<githubRepository>r6-generator-test</githubRepository>
+						<useRoxygen2>true</useRoxygen2>
+						<usePkgdown>true</usePkgdown>
+						<useJavadoc>false</useJavadoc>
+						<useCmdCheck>true</useCmdCheck>
+						<installLocal>true</installLocal>
+						<rjavaOpts>
+							<rjavaOpt>-Xmx4096M</rjavaOpt>
+						</rjavaOpts>
+						<packageName>rgentest</packageName>
+						<defaultLogLevel>WARN</defaultLogLevel>
+						<license>MIT</license>
+						<preCompileBinary>true</preCompileBinary>
+						<packageAllDependencies>true</packageAllDependencies>
+						<description>${project.description}</description>
+						<maintainerName>John</maintainerName>
+						<maintainerFamilyName>Dimeo</maintainerFamilyName>
+					</packageData>
+					<outputDirectory>${project.basedir}/..</outputDirectory>
+				</configuration>
+				<executions>
+					<execution>
+						<id>clean-r-library</id>
+						<goals>
+							<goal>clean-r-library</goal>
+						</goals>
+					</execution>
+					<execution>
+						<id>generate-r-library</id>
+						<goals>
+							<goal>generate-r-library</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+</project>
