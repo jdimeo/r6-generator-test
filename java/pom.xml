@@ -55,11 +55,11 @@
 						<debug>false</debug>
 						<githubOrganisation>jdimeo</githubOrganisation>
 						<githubRepository>r6-generator-test</githubRepository>
-						<useRoxygen2>true</useRoxygen2>
-						<usePkgdown>true</usePkgdown>
+						<useRoxygen2>false</useRoxygen2>
+						<usePkgdown>false</usePkgdown>
 						<useJavadoc>false</useJavadoc>
-						<useCmdCheck>true</useCmdCheck>
-						<installLocal>true</installLocal>
+						<useCmdCheck>false</useCmdCheck>
+						<installLocal>false</installLocal>
 						<rjavaOpts>
 							<rjavaOpt>-Xmx4096M</rjavaOpt>
 						</rjavaOpts>
